@@ -1,470 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Mukkamalla Subramanya Trishank Reddy - Data Science student, Full Stack Developer, IoT enthusiast, and Machine Learning developer." />
-  <meta name="keywords" content="portfolio, software engineer, full stack developer, data science, machine learning, IoT, SRMIST" />
-  <meta name="author" content="Mukkamalla Subramanya Trishank Reddy" />
-  <meta name="theme-color" content="#050816" />
-  <title>Mukkamalla Subramanya Trishank Reddy | Developer Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <meta name="theme-color" content="#07090d" />
+  <meta name="description" content="Subramanya Trishank Reddy Mukkamalla — Computer Science Engineer specializing in data science, machine learning, full-stack development and IoT." />
+  <title>SUBRAMANYA TRISHANK REDDY MUKKAMALLA — TRISHANK.DEV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loader-ring"></div>
-    <span>Loading portfolio...</span>
-  </div>
-
-  <canvas id="particleCanvas" aria-hidden="true"></canvas>
-  <div class="page-glow page-glow-1" aria-hidden="true"></div>
-  <div class="page-glow page-glow-2" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Go to home">
-        <span class="brand-mark">M</span>
-        <span class="brand-text">Trishank</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#github">GitHub</a>
-        <a href="#profiles">Profiles</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fa-solid fa-moon"></i>
-      </button>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Subramanya Trishank Reddy Mukkamalla home"><span class="brand-mark">T<span>/</span></span><span>TRISHANK.DEV</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#skills">Stack</a><a href="#projects">Projects</a><a href="#experience">Journey</a><a href="#contact">Contact</a>
     </nav>
+    <div class="availability"><span class="pulse"></span> Available for opportunities</div>
+    <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span></button>
   </header>
 
-  <main id="home">
-    <section class="hero section-pad">
-      <div class="container hero-grid">
-        <div class="hero-content" data-aos="fade-up">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Available for internships, collaborations, and full-time opportunities
-          </div>
-          <h1>Mukkamalla Subramanya <span>Trishank Reddy</span></h1>
-          <p class="hero-role"><span class="typing-prefix">I build</span> <span id="typingText" class="typing-text"></span></p>
-          <p class="hero-description">Motivated Computer Science student specializing in Data Science with hands-on experience in Machine Learning, IoT, and Full Stack Development.</p>
+  <main>
+    <section class="hero" id="home">
+      <canvas id="hero-canvas" aria-label="Interactive neural network visualization"></canvas>
+      <div class="hero-grid"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> CSE · DATA SCIENCE · SRMIST <span class="eyebrow-index">01 / 06</span></p>
+        <p class="full-name">SUBRAMANYA TRISHANK REDDY MUKKAMALLA</p><h1>I build intelligent<br><em>systems</em> that connect<br>data <span>&amp;</span> the real world.</h1>
+        <p class="hero-copy">Computer Science Engineer specializing in Data Science, Machine Learning, Full-Stack Development and IoT.</p>
+        <div class="hero-actions"><a class="button button-primary magnetic" href="#projects">Explore the work <span>↗</span></a><a class="button button-ghost magnetic" href="Resume.pdf" target="_blank" rel="noopener" download>Download resume <span>↓</span></a></div>
+        <div class="hero-foot"><span class="role-label">Currently shaping <strong id="role-text">Data Science Engineer</strong></span><span class="scroll-cue"><span class="scroll-line"></span> Scroll to explore</span></div>
+      </div>
+      <div class="hero-side-note">KADAPA, AP<br><span>INDIA · 2026</span></div>
+      <div class="hero-stat"><span class="stat-number">07</span><span>domains in<br>one stack</span></div>
+    </section>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" id="resumeDownload" href="assets/documents/Cv.pdf" download="Mukkamalla_Subramanya_Trishank_Reddy_Resume.pdf">Download Resume</a>
-            <a class="btn btn-ghost" href="#contact">Contact Me</a>
-          </div>
+    <section class="intro section" id="about">
+      <div class="section-label"><span>02</span><span class="label-rule"></span><span>WHO I AM</span></div>
+      <div class="intro-grid">
+        <div class="section-heading reveal"><p class="kicker">Beyond the code</p><h2>Curiosity is<br>my <em>operating system.</em></h2></div>
+        <div class="intro-body reveal"><p class="large-copy">I’m a Computer Science undergraduate at SRM Institute of Science and Technology, turning messy real-world signals into thoughtful software.</p><p>From a patient’s vital signs to an agricultural image, I build systems that listen, learn and respond. My work lives at the intersection of machine learning, connected devices and full-stack product engineering.</p><a class="text-link" href="#contact">Let’s make something useful <span>→</span></a></div>
+      </div>
+      <div class="metrics reveal"><div><strong data-count="6">0</strong><span>Production-ready<br>applications</span></div><div><strong data-count="94" data-suffix="%">0</strong><span>ML classification<br>accuracy</span></div><div><strong data-count="50">0</strong><span>Concurrent<br>users</span></div><div><strong data-count="150" data-suffix="+">0</strong><span>DSA problems<br>solved</span></div></div>
+      <div class="mini-timeline reveal"><div class="timeline-item"><span>2022</span><p>Started B.Tech<br>at SRMIST</p></div><div class="timeline-item"><span>2024</span><p>ML &amp; Data Science<br>projects</p></div><div class="timeline-item"><span>2025</span><p>IoT + Full-Stack<br>engineering</p></div><div class="timeline-item active"><span>2026</span><p>Software / ML<br>engineering career</p></div></div>
+    </section>
 
-          <div class="social-links" aria-label="Social profiles">
-            <a href="https://github.com/trishank18" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
-            <a href="https://leetcode.com/" target="_blank" rel="noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i><span>LeetCode</span></a>
-            <a href="https://www.hackerrank.com/" target="_blank" rel="noreferrer" aria-label="HackerRank"><i class="fa-solid fa-laptop-code"></i><span>HackerRank</span></a>
-          </div>
-        </div>
+    <section class="skills section" id="skills">
+      <div class="section-label"><span>03</span><span class="label-rule"></span><span>WHAT I KNOW</span></div>
+      <div class="section-heading split-heading reveal"><div><p class="kicker">The stack</p><h2>A system of<br><em>connected skills.</em></h2></div><p>Hover a node. Every tool is part of a larger way of thinking.</p></div>
+      <div class="skill-universe reveal"><div class="skill-orbit orbit-one"></div><div class="skill-orbit orbit-two"></div><div class="skill-core"><span class="core-ring"></span><small>ENGINEERING</small><strong>STACK</strong><span class="core-dot"></span></div><div class="skill-nodes"></div></div>
+      <div class="skill-legend"><span><i class="dot cyan"></i> AI / DATA</span><span><i class="dot orange"></i> SOFTWARE</span><span><i class="dot lime"></i> CONNECTED SYSTEMS</span></div>
+    </section>
 
-        <div class="hero-card" data-aos="fade-left">
-          <div class="hero-card-top">
-            <div>
-              <p class="muted-label">Profile Snapshot</p>
-              <h2>Software Engineer Portfolio</h2>
-            </div>
-            <div class="status-pill"><span></span> Open to opportunities</div>
-          </div>
-
-          <div class="hero-metrics">
-            <div class="metric">
-              <strong class="counter" data-target="2">0</strong>
-              <span>Major Projects</span>
-            </div>
-            <div class="metric">
-              <strong class="counter" data-target="150">0</strong><span>+ Problems Solved</span>
-            </div>
-            <div class="metric">
-              <strong class="counter" data-target="4">0</strong><span>Certifications</span>
-            </div>
-          </div>
-
-          <div class="profile-summary">
-            <div>
-              <span>Name</span>
-              <strong>Mukkamalla Subramanya Trishank Reddy</strong>
-            </div>
-            <div>
-              <span>Location</span>
-              <strong>Jammalamadugu, Andhra Pradesh, India</strong>
-            </div>
-            <div>
-              <span>Contact</span>
-              <strong>+91 7075356362</strong>
-            </div>
-          </div>
-        </div>
+    <section class="projects section" id="projects">
+      <div class="section-label"><span>04</span><span class="label-rule"></span><span>WHAT I BUILD</span></div>
+      <div class="section-heading split-heading reveal"><div><p class="kicker">Selected work</p><h2>Ideas made<br><em>operational.</em></h2></div><p>Three projects. Three different ways technology can meet the physical world.</p></div>
+      <div class="project-list">
+        <article class="project-card project-med reveal" data-tilt><div class="project-visual health-visual"><div class="visual-top"><span>LIVE MONITOR</span><span class="live-dot">● LIVE</span></div><div class="health-ring"><div class="heart">♥</div><svg viewBox="0 0 400 80" preserveAspectRatio="none"><polyline points="0,45 50,45 66,42 77,60 92,12 106,48 152,48 169,43 181,59 197,15 211,47 260,47 280,47 296,43 308,59 324,13 339,47 400,47" /></svg></div><div class="vitals"><span><b>72</b> BPM</span><span><b>98</b> <i>%</i> SpO2</span><span><b>36.8</b> °C</span></div><div class="data-stream">101001  ·  SENSOR_ESP32  ·  010110  ·  NODE_04</div></div><div class="project-info"><div class="project-index">01 / 03 <span>IoT · ML · HEALTH</span></div><h3>MedConnect</h3><h4>IoT-based remote patient monitoring platform</h4><p>An IoT-based health monitoring platform for real-time patient vital tracking, predictive analysis and secure visualization.</p><div class="tags"><span>Arduino</span><span>C++</span><span>Python</span><span>PHP</span><span>MySQL</span></div><div class="project-more">Real-time vitals <span>↗</span></div></div></article>
+        <article class="project-card project-potato reveal" data-tilt><div class="project-visual leaf-visual"><div class="scan-label">VISION MODEL <span>v.01</span></div><div class="leaf-shape"><span></span><span></span><span></span><span></span></div><div class="scan-beam"></div><div class="prediction"><span>PREDICTION</span><strong>Early Blight</strong><small>CONFIDENCE <b>94.2%</b></small></div><div class="pipeline"><span>IMAGE</span><i>→</i><span>CNN</span><i>→</i><span>FEATURES</span><i>→</i><span>PREDICTION</span></div></div><div class="project-info"><div class="project-index">02 / 03 <span>AI · COMPUTER VISION</span></div><h3>Potato Leaf<br>Disease Detection</h3><h4>CNN-based agricultural AI</h4><p>A deep-learning computer vision system that detects potato leaf diseases using CNN-based image classification.</p><div class="tags"><span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>Flask</span></div><div class="project-more">94% classification accuracy <span>↗</span></div></div></article>
+        <article class="project-card project-mittsu reveal" data-tilt><div class="project-visual commerce-visual"><div class="commerce-header"><span>MITTSU<span>THREADS</span></span><span>◎ CART (03)</span></div><div class="commerce-product"><div class="product-orb"></div><span>NEW / 2025</span><strong>FORM /<br>FUNCTION</strong></div><div class="commerce-nodes"><span>CUSTOMER</span><i>→</i><span>API</span><i>→</i><span>DB</span><i>→</i><span>PAYMENT</span></div></div><div class="project-info"><div class="project-index">03 / 03 <span>FULL-STACK · E-COMMERCE</span></div><h3>MittsuThreads</h3><h4>Production full-stack e-commerce platform</h4><p>A full-stack e-commerce platform featuring product management, inventory tracking, authentication, payments and analytics.</p><div class="tags"><span>React.js</span><span>Node.js</span><span>MongoDB</span><span>AWS</span></div><div class="project-more">Explore the architecture <span>↗</span></div></div></article>
       </div>
     </section>
 
-    <section class="section-pad about-section" id="about">
-      <div class="container grid-two">
-        <div data-aos="fade-right">
-          <p class="section-tag">About Me</p>
-          <h2>Building intelligent systems with a product-first mindset.</h2>
-        </div>
-        <div class="glass-card" data-aos="fade-left">
-          <p>Strong interest in AI, Machine Learning, IoT, and Full Stack Development. I enjoy turning ideas into practical systems that combine data, automation, and polished interfaces.</p>
-          <p>My work spans real-time monitoring systems, deep learning models, and responsive web applications. I am comfortable working across the stack with Python, TensorFlow, PHP, MySQL, ESP32, and modern web technologies.</p>
-          <p>What drives me is innovation and problem solving, especially when I can build something that is useful, reliable, and visually refined.</p>
-        </div>
-      </div>
+    <section class="experience section" id="experience">
+      <div class="section-label"><span>05</span><span class="label-rule"></span><span>HOW I THINK</span></div>
+      <div class="section-heading reveal"><p class="kicker">The journey</p><h2>Built through<br><em>real problems.</em></h2></div>
+      <div class="experience-track"><div class="track-line"></div><article class="experience-item reveal"><div class="exp-date">SEP 2024 — JAN 2025</div><div class="exp-marker"></div><div class="exp-content"><span class="exp-type">DEEP LEARNING ENGINEER</span><h3>Potato Leaf Disease Detection</h3><p>Image preprocessing, data augmentation, CNN architecture, model optimization and Flask deployment.</p><div class="tags"><span>Python</span><span>TensorFlow</span><span>Keras</span><span>OpenCV</span></div></div></article><article class="experience-item reveal"><div class="exp-date">FEB 2025 — MAY 2025</div><div class="exp-marker"></div><div class="exp-content"><span class="exp-type">IOT FULL-STACK DEVELOPER</span><h3>MedConnect</h3><p>Designed the connected architecture from IoT sensors to backend, database and real-time dashboard.</p><div class="tags"><span>IoT sensors</span><span>PHP</span><span>MySQL</span><span>ML</span></div></div></article><article class="experience-item reveal"><div class="exp-date">NOV 2025 — PRESENT</div><div class="exp-marker"></div><div class="exp-content"><span class="exp-type">FULL-STACK DEVELOPER</span><h3>MittsuThreads</h3><p>Building a commerce system across frontend, REST APIs, database, payments and cloud services.</p><div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Razorpay</span></div></div></article></div>
     </section>
 
-    <section class="section-pad" id="skills">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">Skills</p>
-          <h2>Technologies and concepts I use to build and ship solutions.</h2>
-        </div>
-        <div class="skill-grid">
-          <article class="skill-card" data-aos="zoom-in"><h3>Programming Languages</h3><div class="chip-list"><span>Python</span><span>C</span><span>SQL</span><span>PHP</span><span>JavaScript</span></div></article>
-          <article class="skill-card" data-aos="zoom-in" data-aos-delay="100"><h3>Web Technologies</h3><div class="chip-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span></div></article>
-          <article class="skill-card" data-aos="zoom-in" data-aos-delay="150"><h3>Libraries & Frameworks</h3><div class="chip-list"><span>TensorFlow</span><span>Keras</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div></article>
-          <article class="skill-card" data-aos="zoom-in" data-aos-delay="200"><h3>Database</h3><div class="chip-list"><span>MySQL</span></div></article>
-          <article class="skill-card" data-aos="zoom-in" data-aos-delay="250"><h3>Tools & Platforms</h3><div class="chip-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Arduino IDE</span><span>Jupyter Notebook</span><span>XAMPP</span></div></article>
-          <article class="skill-card" data-aos="zoom-in" data-aos-delay="300"><h3>Core Concepts</h3><div class="chip-list"><span>Machine Learning</span><span>Deep Learning</span><span>CNN</span><span>IoT</span><span>REST APIs</span><span>JDBC</span><span>Data Analysis</span></div></article>
-        </div>
-      </div>
+    <section class="proof section">
+      <div class="section-label"><span>06</span><span class="label-rule"></span><span>THE SIGNAL</span></div>
+      <div class="proof-grid"><div class="proof-heading reveal"><p class="kicker">Beyond the résumé</p><h2>Proof, in<br><em>the details.</em></h2></div><div class="proof-cards"><article class="proof-card reveal"><span class="proof-icon">✦</span><span class="proof-type">HACKATHON FINALIST</span><strong>Top 10 <small>/ 200+ teams</small></strong><p>OODP Hackathon 2023. Built a Java/MySQL inventory system using ACID transactions and OOP design patterns.</p></article><article class="proof-card reveal"><span class="proof-icon">⌘</span><span class="proof-type">COMPETITIVE PROGRAMMING</span><strong>1,650+ <small>contest rating</small></strong><p>150+ DSA challenges across LeetCode, HackerRank and InterviewBit.</p></article><article class="proof-card reveal"><span class="proof-icon">◉</span><span class="proof-type">LEADERSHIP</span><strong>15 <small>member team</small></strong><p>Operations Head, DSA Club SRMIST. Organized 8 technical events with 500+ attendees.</p></article><article class="proof-card reveal"><span class="proof-icon">⌁</span><span class="proof-type">TECHNICAL EXHIBITION</span><strong>2 <small>ML projects</small></strong><p>Presented to 500+ visitors and received faculty “Best Implementation” commendation.</p></article></div></div>
     </section>
 
-    <section class="section-pad education-section" id="education">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">Education</p>
-          <h2>Academic foundation in computer science and data science.</h2>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item" data-aos="fade-up">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card glass-card">
-              <p class="timeline-year">2022 - 2026</p>
-              <h3>SRM Institute of Science and Technology</h3>
-              <p>B.Tech in Computer Science and Engineering (Data Science)</p>
-              <span>CGPA: 7.8/10</span>
-            </div>
-          </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card glass-card">
-              <p class="timeline-year">2020 - 2022</p>
-              <h3>Bhashyam Junior College</h3>
-              <p>MPC</p>
-              <span>Percentage: 78.4%</span>
-            </div>
-          </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card glass-card">
-              <p class="timeline-year">2020</p>
-              <h3>Indus High School</h3>
-              <p>SSC</p>
-              <span>Percentage: 92.1%</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="projects">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">Projects</p>
-          <h2>Selected projects that combine machine intelligence with practical applications.</h2>
-        </div>
-
-        <div class="filter-bar" data-aos="fade-up">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ml">Machine Learning</button>
-          <button class="filter-btn" data-filter="iot">IoT</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card glass-card" data-category="ml" data-aos="fade-up">
-            <div class="project-badge">Sept 2024 - Jan 2025</div>
-            <h3>Potato Leaf Disease Detection using CNN</h3>
-            <p class="project-text">Built a CNN model for potato leaf disease classification with image preprocessing, augmentation, and optimization techniques to improve prediction accuracy.</p>
-            <div class="chip-list project-chips"><span>Python</span><span>TensorFlow</span><span>Keras</span><span>CNN</span><span>Deep Learning</span></div>
-            <ul class="project-points">
-              <li>Supports precision agriculture and early disease detection.</li>
-              <li>Improves reliability with data augmentation and tuning.</li>
-            </ul>
-            <div class="card-actions">
-              <a href="https://github.com/" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
-              <a href="https://medconect.kesug.com" target="_blank" rel="noreferrer" class="btn btn-ghost btn-sm">Demo</a>
-            </div>
-          </article>
-
-          <article class="project-card glass-card" data-category="iot" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-badge">Feb 2025 - May 2025</div>
-            <h3>MedConnect - IoT Based Health Monitoring System</h3>
-            <p class="project-text">Designed a real-time patient health monitoring system with live heart rate and SpO2 tracking, predictive analytics, and a responsive healthcare dashboard.</p>
-            <div class="chip-list project-chips"><span>ESP32</span><span>MAX30102</span><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>JDBC</span><span>Machine Learning</span></div>
-            <ul class="project-points">
-              <li>Includes doctor and patient authentication.</li>
-              <li>Combines embedded systems with analytics and web UI.</li>
-            </ul>
-            <div class="card-actions">
-              <a href="https://github.com/" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
-              <a href="#contact" class="btn btn-ghost btn-sm">Demo</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad github-section" id="github">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">GitHub & Repositories</p>
-          <h2>Live repository data, contribution visuals, and featured work from my GitHub profile.</h2>
-        </div>
-
-        <div class="github-layout">
-          <article class="github-profile-card glass-card" data-aos="fade-right">
-            <div class="github-profile-header">
-              <div class="github-avatar"><i class="fa-brands fa-github"></i></div>
-              <div>
-                <p class="muted-label">GitHub Profile</p>
-                <h3>trishank18</h3>
-                <p class="github-bio">Computer Science Engineering Student | Data Science | Full Stack Developer | IoT & Machine Learning Enthusiast</p>
-              </div>
-            </div>
-
-            <div class="github-stats-strip">
-              <div class="stat-chip"><strong id="repoCount">0</strong><span>Repositories</span></div>
-              <div class="stat-chip"><strong id="followerCount">0</strong><span>Followers</span></div>
-              <div class="stat-chip"><strong id="starCount">0</strong><span>Stars</span></div>
-              <div class="stat-chip"><strong id="languageCount">0</strong><span>Languages</span></div>
-            </div>
-
-            <div class="github-links">
-              <a class="btn btn-primary btn-sm" href="https://github.com/trishank18" target="_blank" rel="noreferrer">View More on GitHub</a>
-              <a class="btn btn-secondary btn-sm" href="#contact">Collaborate</a>
-            </div>
-          </article>
-
-          <div class="github-visual-stack" data-aos="fade-left">
-            <div class="github-visual-card glass-card">
-              <div class="card-title-row">
-                <h3>Contribution Graph</h3>
-                <span>Dynamic heatmap</span>
-              </div>
-              <img class="github-heatmap" src="https://ghchart.rshah.org/0f172a/trishank18" alt="GitHub contribution heatmap for trishank18" />
-            </div>
-
-            <div class="github-stats-grid">
-              <div class="github-mini-stat glass-card">
-                <p>Profile Bio</p>
-                <h3>Data Science + Full Stack</h3>
-              </div>
-              <div class="github-mini-stat glass-card">
-                <p>Repository Showcase</p>
-                <h3>Featured projects and live metrics</h3>
-              </div>
-              <div class="github-mini-stat glass-card">
-                <p>Animated Statistics</p>
-                <h3>Stars, followers, repositories</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="github-toolbar glass-card" data-aos="fade-up">
-          <label class="repo-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input id="repoSearch" type="search" placeholder="Search repositories by name, language, or technology" />
-          </label>
-          <div class="repo-filter-row" id="repoFilters">
-            <button class="filter-btn active" data-repo-filter="all">All</button>
-            <button class="filter-btn" data-repo-filter="iot">IoT</button>
-            <button class="filter-btn" data-repo-filter="ml">Machine Learning</button>
-            <button class="filter-btn" data-repo-filter="web">Web</button>
-            <button class="filter-btn" data-repo-filter="data">Data</button>
-            <button class="filter-btn" data-repo-filter="app">Applications</button>
-          </div>
-        </div>
-
-        <div class="repo-grid" id="repoGrid" data-aos="fade-up"></div>
-
-        <div class="github-metrics-grid">
-          <article class="glass-card github-metric-card" data-aos="fade-up">
-            <div class="card-title-row">
-              <h3>Most Used Languages</h3>
-              <span>From public repository activity</span>
-            </div>
-            <div class="language-bars" id="languageBars"></div>
-          </article>
-          <article class="glass-card github-metric-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-title-row">
-              <h3>GitHub Stats</h3>
-              <span>Public profile summary</span>
-            </div>
-            <div class="stats-cards-inline">
-              <img src="https://github-readme-stats.vercel.app/api?username=trishank18&show_icons=true&count_private=true&hide_border=true&theme=transparent&title_color=7d8dff&text_color=f4f7fb&icon_color=26d0ce&bg_color=00000000" alt="GitHub stats card for trishank18" />
-              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=trishank18&layout=compact&hide_border=true&theme=transparent&title_color=7d8dff&text_color=f4f7fb&bg_color=00000000" alt="Most used languages card for trishank18" />
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad profiles-section" id="profiles">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">Coding Platforms</p>
-          <h2>Profiles that reflect coding practice, problem solving, and technical growth.</h2>
-        </div>
-        <div class="profile-grid">
-          <a class="profile-card glass-card" href="https://github.com/trishank18" target="_blank" rel="noreferrer" data-aos="zoom-in">
-            <i class="fa-brands fa-github"></i>
-            <h3>GitHub Profile</h3>
-            <p>Repository activity, collaborations, and featured work.</p>
-          </a>
-          <a class="profile-card glass-card" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fa-brands fa-linkedin-in"></i>
-            <h3>LinkedIn Profile</h3>
-            <p>Professional network, experience, and career updates.</p>
-          </a>
-          <a class="profile-card glass-card" href="https://leetcode.com/" target="_blank" rel="noreferrer" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fa-solid fa-code"></i>
-            <h3>LeetCode Profile</h3>
-            <p>Problem solving practice and competitive programming progress.</p>
-          </a>
-          <a class="profile-card glass-card" href="https://www.hackerrank.com/" target="_blank" rel="noreferrer" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>HackerRank Profile</h3>
-            <p>Certification-driven coding practice and challenge completion.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="certifications">
-      <div class="container">
-        <div class="section-heading" data-aos="fade-up">
-          <p class="section-tag">Certifications</p>
-          <h2>Learning milestones that reinforce practical and industry-ready skills.</h2>
-        </div>
-        <div class="cert-grid">
-          <article class="cert-card glass-card" data-aos="fade-up"><i class="fa-brands fa-aws"></i><h3>AWS Academy Machine Learning Foundations</h3><p>AWS Academy</p></article>
-          <article class="cert-card glass-card" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-chart-line"></i><h3>Google Data Analytics Capstone</h3><p>Google</p></article>
-          <article class="cert-card glass-card" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-microchip"></i><h3>Arduino Certification</h3><p>Udemy</p></article>
-          <article class="cert-card glass-card" data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-robot"></i><h3>Raspberry Pi Certification</h3><p>Udemy</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="achievements">
-      <div class="container split-section">
-        <div data-aos="fade-right">
-          <p class="section-tag">Achievements</p>
-          <h2>Competition results and practical milestones.</h2>
-        </div>
-        <div class="glass-card list-card" data-aos="fade-left">
-          <ul>
-            <li>Finalist in OODP Hackathon 2023</li>
-            <li>Solved 150+ coding problems on LeetCode, HackerRank, AdventOfCode, and InterviewBit</li>
-            <li>Developed multiple Machine Learning and IoT-based academic projects</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" id="leadership">
-      <div class="container split-section">
-        <div data-aos="fade-right">
-          <p class="section-tag">Leadership & Extracurriculars</p>
-          <h2>Roles that strengthened teamwork, operations, and community involvement.</h2>
-        </div>
-        <div class="glass-card list-card" data-aos="fade-left">
-          <ul>
-            <li>Volunteer at May I Help You Foundation</li>
-            <li>Student Member at ISTE Student Chapter, SRMIST</li>
-            <li>Operations Committee Head at Directorate of Student Affairs (DSA), SRMIST</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad contact-section" id="contact">
-      <div class="container contact-grid">
-        <div data-aos="fade-right">
-          <p class="section-tag">Contact</p>
-          <h2>Let’s discuss internships, projects, or collaborations.</h2>
-          <div class="contact-cards">
-            <article class="contact-card glass-card"><i class="fa-solid fa-envelope"></i><span>Email</span><strong>trishanktrishank787@gmail.com</strong></article>
-            <article class="contact-card glass-card"><i class="fa-solid fa-phone"></i><span>Phone</span><strong>+91 7075356362</strong></article>
-            <article class="contact-card glass-card"><i class="fa-solid fa-location-dot"></i><span>Location</span><strong>Jammalamadugu, Andhra Pradesh, India</strong></article>
-          </div>
-        </div>
-
-        <form class="contact-form glass-card" data-aos="fade-left">
-          <div class="field-row">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="Your email" required />
-            </label>
-          </div>
-          <label>
-            <span>Subject</span>
-            <input type="text" name="subject" placeholder="Project inquiry" required />
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Tell me about your idea" required></textarea>
-          </label>
-          <button class="btn btn-primary btn-full" type="submit">Send Message</button>
-          <p class="form-note" id="formNote">Or email directly at trishanktrishank787@gmail.com</p>
-        </form>
-      </div>
-    </section>
+    <section class="contact section" id="contact"><div class="contact-grid"><div class="contact-main reveal"><p class="kicker">The next signal</p><h2>Let’s build<br>something <em>intelligent.</em></h2><p>Open to opportunities in Software Engineering, Data Science, Machine Learning and Full-Stack Development.</p><button class="portal-button magnetic" id="contact-open">Start a conversation <span>↗</span></button></div><div class="contact-details reveal"><div class="contact-line"><span>EMAIL</span><a href="mailto:mukkamallatrishankreddy@gmail.com">mukkamallatrishankreddy@gmail.com</a></div><div class="contact-line"><span>PHONE</span><a href="tel:+917075356362">+91 7075356362</a></div><div class="contact-line"><span>NETWORK</span><a href="https://github.com/trishank18" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://leetcode.com/u/Trishankreddy" target="_blank" rel="noreferrer">LeetCode ↗</a></div><div class="contact-location">KADAPA, ANDHRA PRADESH<br>INDIA · 2026</div></div></div></section>
   </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">T<span>/</span></span><span>TRISHANK.DEV</span></a><span>DESIGNED &amp; ENGINEERED WITH CURIOSITY</span><span>© 2026</span></footer>
 
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© 2026 Mukkamalla Subramanya Trishank Reddy. Crafted with modern web technologies.</p>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <dialog class="contact-modal" id="contact-modal"><button class="modal-close" id="modal-close" aria-label="Close contact form">×</button><p class="kicker">Open channel</p><h2>Start a<br><em>conversation.</em></h2><p class="modal-copy">Tell me what you’re building. Your email client will open with a ready-to-send message.</p><form id="contact-form"><label>Your name<input required name="name" type="text" placeholder="How should I call you?" /></label><label>Your email<input required name="email" type="email" placeholder="you@company.com" /></label><label>Message<textarea required name="message" rows="4" placeholder="Tell me about the opportunity..."></textarea></label><button class="button button-primary" type="submit">Open email client <span>↗</span></button></form></dialog>
   <script src="script.js"></script>
 </body>
 </html>
